@@ -14,6 +14,20 @@
 
 #import "WeiboSDK.h"
 
+#import "WeiboDataBase.h"//数据库的方法类
+#import "FMDatabase.h"
+#import "FMResultSet.h"
+
+#import "WeiBoContext.h"//微博内容的具体解析
+#import "Emotions.h"//表情的具体解析
+#import "UserInfo.h"//用户的个人信息具体解析
+
+
+#import "Friends_Timeline_Weibo.h"//请求最新好友圈的微博方法类
+#import "Public_Timeline_Weibo.h"//请求最新的公共微博类
+
+#import "WBHTTP_Request_Block.h"//微博网络请求的块方法实现类
+
 #define kAppKey         @"3531528783"
 #define kRedirectURI    @"https://api.weibo.com/oauth2/default.html"
 

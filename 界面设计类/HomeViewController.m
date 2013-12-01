@@ -30,8 +30,8 @@
     
     self.view.backgroundColor = [UIColor lightGrayColor];
     
-    friendWeibo = [[Friends_Timeline_Weibo alloc] init];
-    [friendWeibo getFriendsTimelineWeibo];
+//    friendWeibo = [[Friends_Timeline_Weibo alloc] init];
+//    [friendWeibo getFriendsTimelineWeibo];
     
     //创建左右button和中间标题栏
     [self initWithButtonAndTitle];

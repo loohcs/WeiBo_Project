@@ -2763,6 +2763,13 @@
 		3E9D28A11845F6DA003BF289 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9D289E1845F6DA003BF289 /* libWeiboSDK.a */; };
 		3E9D28A21845F6DA003BF289 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3E9D289F1845F6DA003BF289 /* WeiboSDK.bundle */; };
 		3E9D28A51845F9A9003BF289 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E9D28A41845F9A9003BF289 /* RootViewController.m */; };
+		3EA05BAC184B257500D6D941 /* WeiboDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA05BAB184B257400D6D941 /* WeiboDataBase.m */; };
+		3EA05BB8184B25CA00D6D941 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA05BAF184B25CA00D6D941 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		3EA05BB9184B25CA00D6D941 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA05BB1184B25CA00D6D941 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		3EA05BBA184B25CA00D6D941 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA05BB3184B25CA00D6D941 /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		3EA05BBB184B25CA00D6D941 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA05BB5184B25CA00D6D941 /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		3EA05BBC184B25CA00D6D941 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA05BB7184B25CA00D6D941 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		3EA05BBE184B269300D6D941 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EA05BBD184B269300D6D941 /* libsqlite3.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -5562,6 +5569,19 @@
 		3E9D28A01845F6DA003BF289 /* WeiboSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboSDK.h; sourceTree = "<group>"; };
 		3E9D28A31845F9A9003BF289 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ../RootViewController.h; sourceTree = "<group>"; };
 		3E9D28A41845F9A9003BF289 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = ../RootViewController.m; sourceTree = "<group>"; };
+		3EA05BAA184B257400D6D941 /* WeiboDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboDataBase.h; sourceTree = "<group>"; };
+		3EA05BAB184B257400D6D941 /* WeiboDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboDataBase.m; sourceTree = "<group>"; };
+		3EA05BAE184B25CA00D6D941 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		3EA05BAF184B25CA00D6D941 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		3EA05BB0184B25CA00D6D941 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		3EA05BB1184B25CA00D6D941 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		3EA05BB2184B25CA00D6D941 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		3EA05BB3184B25CA00D6D941 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		3EA05BB4184B25CA00D6D941 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		3EA05BB5184B25CA00D6D941 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		3EA05BB6184B25CA00D6D941 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		3EA05BB7184B25CA00D6D941 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		3EA05BBD184B269300D6D941 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -5569,6 +5589,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EA05BBE184B269300D6D941 /* libsqlite3.0.dylib in Frameworks */,
 				3E9D28811845F669003BF289 /* UIKit.framework in Frameworks */,
 				3E9D28831845F669003BF289 /* Foundation.framework in Frameworks */,
 				3E9D28851845F669003BF289 /* CoreGraphics.framework in Frameworks */,
@@ -5619,6 +5640,7 @@
 		3E9474AC1847399100C28A41 /* 功能类 */ = {
 			isa = PBXGroup;
 			children = (
+				3EA05BBF184B26F800D6D941 /* WeiboDB */,
 				3E9474AA1847397800C28A41 /* 自定义的cell */,
 				3E948A731847547400C28A41 /* 根据文本大小求size */,
 				3E9474C218473B5700C28A41 /* 网络请求 */,
@@ -8686,6 +8708,7 @@
 		3E9D28741845F669003BF289 = {
 			isa = PBXGroup;
 			children = (
+				3EA05BAD184B25CA00D6D941 /* dataBase */,
 				3E9BB70C1848221800D1E418 /* Temp_Data.txt */,
 				3E948A77184755F500C28A41 /* 对象类 */,
 				3E94756D18474D5100C28A41 /* images */,
@@ -8711,6 +8734,7 @@
 		3E9D287F1845F669003BF289 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3EA05BBD184B269300D6D941 /* libsqlite3.0.dylib */,
 				3E9D28801845F669003BF289 /* UIKit.framework */,
 				3E9D28821845F669003BF289 /* Foundation.framework */,
 				3E9D28841845F669003BF289 /* CoreGraphics.framework */,
@@ -8749,6 +8773,32 @@
 				3E9D28A01845F6DA003BF289 /* WeiboSDK.h */,
 			);
 			path = libWeiboSDK;
+			sourceTree = "<group>";
+		};
+		3EA05BAD184B25CA00D6D941 /* dataBase */ = {
+			isa = PBXGroup;
+			children = (
+				3EA05BAE184B25CA00D6D941 /* FMDatabase.h */,
+				3EA05BAF184B25CA00D6D941 /* FMDatabase.m */,
+				3EA05BB0184B25CA00D6D941 /* FMDatabaseAdditions.h */,
+				3EA05BB1184B25CA00D6D941 /* FMDatabaseAdditions.m */,
+				3EA05BB2184B25CA00D6D941 /* FMDatabasePool.h */,
+				3EA05BB3184B25CA00D6D941 /* FMDatabasePool.m */,
+				3EA05BB4184B25CA00D6D941 /* FMDatabaseQueue.h */,
+				3EA05BB5184B25CA00D6D941 /* FMDatabaseQueue.m */,
+				3EA05BB6184B25CA00D6D941 /* FMResultSet.h */,
+				3EA05BB7184B25CA00D6D941 /* FMResultSet.m */,
+			);
+			path = dataBase;
+			sourceTree = "<group>";
+		};
+		3EA05BBF184B26F800D6D941 /* WeiboDB */ = {
+			isa = PBXGroup;
+			children = (
+				3EA05BAA184B257400D6D941 /* WeiboDataBase.h */,
+				3EA05BAB184B257400D6D941 /* WeiboDataBase.m */,
+			);
+			name = WeiboDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -11564,6 +11614,12 @@
 				3E9475651847498800C28A41 /* ScanLifeViewController.m in Sources */,
 				3E94756A184749E800C28A41 /* SquareViewController.m in Sources */,
 				3E948A76184754CD00C28A41 /* GetTextSize.m in Sources */,
+				3EA05BAC184B257500D6D941 /* WeiboDataBase.m in Sources */,
+				3EA05BB8184B25CA00D6D941 /* FMDatabase.m in Sources */,
+				3EA05BB9184B25CA00D6D941 /* FMDatabaseAdditions.m in Sources */,
+				3EA05BBA184B25CA00D6D941 /* FMDatabasePool.m in Sources */,
+				3EA05BBB184B25CA00D6D941 /* FMDatabaseQueue.m in Sources */,
+				3EA05BBC184B25CA00D6D941 /* FMResultSet.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

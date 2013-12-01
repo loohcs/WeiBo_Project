@@ -7,8 +7,7 @@
 //
 
 #import "RootViewController.h"
-#import "Public_Timeline_Weibo.h"
-#import "Friends_Timeline_Weibo.h"
+
 @interface RootViewController ()
 
 @end
@@ -20,8 +19,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _publicTimelineWeibo = [[Public_Timeline_Weibo alloc] init];
-        _frindsTimelineWeibo = [[Friends_Timeline_Weibo alloc] init];
     }
     return self;
 }

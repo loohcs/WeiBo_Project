@@ -16,19 +16,17 @@
 - (void)getPublicTimeline
 {
     NSLog(@"%s", __func__);
-    NSDictionary *dic = [[NSDictionary alloc] initWithObjectsAndKeys:@"100", @"count", nil];
+    NSDictionary *dic = [[NSDictionary alloc] initWithObjectsAndKeys:@"100",@"count", nil];
     statuses = [[WBHTTP_Request_Block alloc] initWithURlString:STATUSES_PUBLIC_TIMELINE andArguments:dic];
     NSLog(@"%@", STATUSES_PUBLIC_TIMELINE);
-    publicTimelineWeibo = [[WeiBoContext alloc] init];
+    _publicWeiboContex = [[WeiBoContext alloc] init];
+    __weak Public_Timeline_Weibo *publicWeiboClass = self;
     [statuses setBlock:^(NSMutableData *datas, float progressNum)
      {
          //NSString *str = [[NSString alloc] initWithData:datas encoding:NSUTF8StringEncoding];
          //NSLog(@"%@", str);
-         
-         Public_Timeline_Weibo *publicTimelineClass = [[Public_Timeline_Weibo alloc] init];
-         [publicTimelineClass getWeiboContex:datas];
+         [publicWeiboClass getWeiboContex:datas];
      }];
-
 }
 
 - (void)getWeiboContex:(NSData *)data
@@ -37,11 +35,21 @@
     NSError *error = nil;
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
     NSArray *weiboArr = [NSArray arrayWithArray:[dic objectForKey:@"statuses"]];
-    NSDictionary *weiboDic = [NSDictionary dictionaryWithDictionary:[weiboArr objectAtIndex:0]];
-    publicTimelineWeibo = [[WeiBoContext alloc] initWithWeibo:weiboDic];
+    for (int i = 0; i < weiboArr.count; i++) {
+        
+        NSDictionary *weiboDic = [NSDictionary dictionaryWithDictionary:[weiboArr objectAtIndex:i]];
+        _publicWeiboContex = [[WeiBoContext alloc] initWithWeibo:weiboDic];
+        
+        [WeiboDataBase createWeiboTable];
+        [WeiboDataBase addWithWeibo:_publicWeiboContex];
+    }
     
-    //???: 在完成数据的下载以及对下载的数据进行了解析和类对象的初始化之后发布通知
-    NSNotification *noti = [NSNotification notificationWithName:@"完成最新公共微博数据请求" object:self userInfo:weiboDic];
+    //TODO: 判断哪些微博是需要加入数据库的
+    //仅仅需要将当前页面显示的微博都加入数据中，不需要所有的微博
+    
+    [WeiboDataBase findAll];
+    
+    NSNotification *noti = [NSNotification notificationWithName:@"完成微博数据请求" object:self userInfo:dic];
     [[NSNotificationCenter defaultCenter] postNotification:noti];
 }
 
