@@ -12,6 +12,7 @@
 #import "WeiBoContext.h"
 @implementation Friends_Timeline_Weibo
 
+#pragma mark -- 获取最新的好友圈微博
 - (void)getFriendsTimelineWeibo
 {
     NSLog(@"%s", __func__);
@@ -29,6 +30,8 @@
      }];
 }
 
+
+//通过已经下载下来的微博内容（json类型），来初始化一个WeiboContex类对象，并具体解析类中的每一个成员
 - (void)getWeiboContex:(NSData *)data
 {
     NSLog(@"%s", __func__);
@@ -37,6 +40,10 @@
     NSArray *weiboArr = [NSArray arrayWithArray:[dic objectForKey:@"statuses"]];
     NSDictionary *weiboDic = [NSDictionary dictionaryWithDictionary:[weiboArr objectAtIndex:0]];
     _friendsWeiboContext = [[WeiBoContext alloc] initWithWeibo:weiboDic];
+    
+    //???: 在完成数据的下载以及对下载的数据进行了解析和类对象的初始化之后发布通知
+    NSNotification *noti = [NSNotification notificationWithName:@"完成最新好友圈微博数据请求" object:self userInfo:weiboDic];
+    [[NSNotificationCenter defaultCenter] postNotification:noti];
 }
 
 @end

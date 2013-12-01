@@ -39,6 +39,10 @@
     NSArray *weiboArr = [NSArray arrayWithArray:[dic objectForKey:@"statuses"]];
     NSDictionary *weiboDic = [NSDictionary dictionaryWithDictionary:[weiboArr objectAtIndex:0]];
     publicTimelineWeibo = [[WeiBoContext alloc] initWithWeibo:weiboDic];
+    
+    //???: 在完成数据的下载以及对下载的数据进行了解析和类对象的初始化之后发布通知
+    NSNotification *noti = [NSNotification notificationWithName:@"完成最新公共微博数据请求" object:self userInfo:weiboDic];
+    [[NSNotificationCenter defaultCenter] postNotification:noti];
 }
 
 @end
